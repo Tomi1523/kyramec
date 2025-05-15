@@ -1,0 +1,22 @@
+.fade-carousel {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.fade-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-image.active {
+  opacity: 1;
+  position: relative;
+}
+
+  

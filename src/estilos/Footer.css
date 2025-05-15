@@ -1,0 +1,343 @@
+.quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px  ;
+    background-color: rgb(74, 73, 73);
+  }
+
+  .quote-content {
+    text-align: center;
+  }
+
+  .quote-icon {
+    width: 40px;
+    
+  }
+
+  .quote-text {
+    color: white;
+    font-style: italic;
+    line-height: 1.7;
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  .quote-subtext {
+    color: white;
+    font-style: italic;
+    line-height: 1.7;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .logochico{
+   height: 100px;
+ 
+  }
+
+  h3{
+    
+    line-height: 1.4;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight:700;
+  }
+
+  .sub-text{
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #545454;
+    
+  }
+
+ 
+  .logo-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    border-radius: 50%;
+    opacity: 0;
+  }
+  
+  .instagram-hover-area:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+  }
+  
+  .instagram-icon {
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    transform: scale(0.8); 
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+  
+  .instagram-hover-area:hover .instagram-icon {
+    opacity: 1;
+    transform: scale(1); 
+  }
+
+
+  .video-hover {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .video-hover .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .play-icon {
+    font-size: 3rem;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .video-hover:hover .play-icon {
+    transform: scale(1.2);
+  }
+  
+  .btn-custom {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+ 
+  .btn-dark:hover {
+    background-color: #000000;
+    color: #fff;
+  }
+
+.btn-success {
+    border: 2px solid #28a745;
+    background-color: #28a745;
+    color: white;
+    transition: all 0.3s ease;
+    
+}
+
+.btn-success:hover {
+    border: 2px solid #218838;
+    background-color: #218838;
+}
+
+.btn-dark:focus {
+    box-shadow: none; 
+}
+
+
+  .btn-kyramec {
+    border-radius: 50px;        
+    font-family: 'Hind', sans-serif;
+   font-weight: 500;
+    
+                      
+    padding: 8px 16px;         
+    
+  }
+
+  .borde-vertical-blanco {
+    border-right: 1px solid #474747; 
+    
+  }
+  
+  
+.btn-sm{
+  font-family: 'Hind', sans-serif;
+  height: 37px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+  
+  
+  .copyright{
+    margin-top: -15px;
+    color: #838383;
+    font-family: sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
+  
+  
+  .nav-footer {
+    font-size: 15px;
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto del contenedor */
+    display: block; /* Asegura que el enlace ocupe todo el espacio del contenedor */
+    font-size: 15px;
+   
+    
+   
+    color: #b2b2b2;
+   
+    transition: color 0.3s ease;
+    margin-bottom: 10px; /* Espacio entre los elementos */
+    
+  }
+  
+  .nav-footer:hover,
+  .nav-footer:focus {
+    text-decoration: none; /* Elimina el subrayado al pasar el mouse o al enfocar */
+    color: inherit; /* Mantiene el color del texto al pasar el mouse o al enfocar */
+  }
+  
+  
+  .row {
+    margin: 0; /* Eliminar márgenes excesivos */
+    padding: 0; /* Eliminar paddings excesivos */
+    width: 100%; /* Asegurar que el row ocupe todo el ancho disponible */
+  }
+  .ubicacion{
+    font-size: 12px;
+    color:#a3c53d ;
+    letter-spacing: 1.5px;
+   
+    font-family: 'Hind', sans-serif;
+  }
+
+  ul.parrafos-juntos {
+    list-style-type: none; 
+    padding: 0; 
+  }
+  
+  ul.parrafos-juntos li {
+    margin-bottom: 4px; 
+    
+    color: #f7f7f7;
+    font-size: 15px;
+    line-height: 1.7;
+    font-family: 'Hind', sans-serif;
+  }
+  
+  .kyramec-text {
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-left: 80px;
+    padding-right: 60px;
+    font-family: 'Hind', sans-serif;
+  }
+  
+  
+  .list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+  }
+  
+ 
+  .list-items li:hover {
+    color:rgb(70, 133, 2) ;
+  }
+  .image-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* fondo negro transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .image-container:hover .image-overlay {
+    opacity: 1;
+  }
+  
+  .image-overlay i {
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .image-overlay i:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+ 
+  .img-responsive-height {
+  min-height: 250px;
+  object-fit: cover;
+  
+}
+
+.pointer{
+  cursor: pointer;
+
+}
+  /* Cambiar borde y sombra del input cuando se enfoca */
+input.form-control:focus {
+  border-color: rgb(70, 133, 2);
+  box-shadow: none
+}
+
+
+  @media (max-width: 767px) {
+    .logochico {
+      width: 250px;
+     
+    }
+    .borde-vertical-blanco {
+      border-right: none;
+    }
+
+    .kyramec-text {
+      display: block; /* sacamos el flex */
+      padding-left: 15px;
+      padding-right: 15px;
+      text-align: center; /* o start si querés que quede a la izquierda */
+    }
+
+    .img-responsive-height {
+      object-fit: cover;
+    height: 400px;
+    
+  }
+
+  .pointer{
+    min-height: 500px;
+  }
+
+    
+    
+  }
+  
+

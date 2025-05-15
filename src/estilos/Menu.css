@@ -1,0 +1,258 @@
+.navbar {
+    opacity: 0.82;
+    background-color: black;
+    z-index: 1000;
+}
+
+
+
+.container-fluid {
+    height: 50px;
+    padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.navbar {
+  height: 70px; /* o lo que mida tu navbar cerrado */
+
+}
+.navbar-toggler {
+    
+     margin-left: 16px;
+    
+   
+}
+
+/* Fijamos el navbar bien arriba */
+.navbar.fixed-navbar {
+    
+ 
+    left: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 1100;
+}
+
+/* Ajustamos el menú desplegable debajo del navbar */
+.collapse.navbar-collapse {
+    position: absolute;
+    top: 60px; /* igual a la altura del navbar */
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.div-gris {
+    background-color: #ededed;
+}
+
+.tel {
+    font-weight: 600;
+    color: #191919;
+    border-right: 1px solid #e6e6e6;
+    font-family: sans-serif;
+}
+
+.horarios {
+    font-weight: 600;
+    color: #191919;
+    font-family: sans-serif;
+    
+    
+   
+}
+
+.wsp {
+    font-weight: 600;
+    color: #545454;
+    border-right: 1px solid #e6e6e6;
+    font-family: sans-serif;
+    
+}
+
+.wsp:hover{
+color: rgb(70, 133, 2);
+}
+
+span {
+    margin-left: 2px;
+    
+}
+
+.nav-item {
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    
+  
+    
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 17px;
+   
+    font-weight: 900;
+
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Que toda el área del LI se pinte */
+.dropdown-menu li > .dropdown-item {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 12px; 
+    color: white;
+    
+    
+
+    
+}
+
+
+
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1100;
+    transition: all 0.3s ease-in-out; 
+    /* Añade una transición suave */
+  }
+  
+  .navbar {
+    transition: top 0.3s ease-in-out; 
+    /* Asegúrate de que el navbar también tenga una transición */
+  }
+
+ 
+  
+  
+
+/* Hover suave sobre todo el item */
+.dropdown-menu li:hover > .dropdown-item {
+    background-color: #1b1a1a;
+}
+
+.dropdown-item {
+    transition: background-color 0.2s ease;
+    width: 40px;
+}
+
+/* Mostrar el primer nivel (ITEM 1) cuando se pasa por EQUIPOS */
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Ocultar submenú de ITEM 1 por defecto */
+.dropdown-submenu .dropdown-menu {
+    display: none;
+    margin-left: -2px;
+    
+}
+
+
+
+/* Quitar el margen superior y bordes que pueden generar movimiento */
+.dropdown-menu {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none;
+  }
+  
+  /* Asegura que todos los submenús estén alineados */
+  .dropdown-submenu .dropdown-menu {
+    margin-left: 0 !important;
+    top: 0;
+    left: 100%;
+    
+  }
+  
+  /* Reemplaza `start-100` por `start-100 top-0` si estás usando Bootstrap 5 */
+  .dropdown-menu.position-absolute.start-100 {
+    top: 0 !important;
+    left: 100% !important;
+  }
+  
+  /* Bordes de li con espaciado estable */
+  .dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 15px;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    
+  }
+  
+
+/* Mostrar submenú (Opción 1 y 2) cuando se pasa por ITEM 1 */
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Ocultar flecha automática de Bootstrap solo donde querés */
+.no-default-arrow.dropdown-toggle::after {
+    display: none !important;
+}
+
+
+@media (max-width: 988px) {
+  .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+.navbar {
+    
+    background-color: black;
+    z-index: 14000;
+}
+
+
+  
+  .nav-item {
+    padding-left: 16px;
+   
+   
+  }
+  
+
+  /* Submenú de Equipos */
+  .mobile-submenu {
+    display: none; /* Ocultar el submenú inicialmente */
+    padding: 1rem;
+    background-color: #343a40;
+    height: 10px;
+    width: 90%;
+    position: relative; /* Mantener el submenú dentro del flujo del contenedor */
+    z-index: 2999;
+    transition: height 0.3s ease-in-out; /* Cambiar a 'height' para una animación más eficiente */
+    height: 0; /* Inicialmente el submenú está colapsado */
+    overflow: hidden; /* Asegura que el submenú no desborde */
+  }
+
+  .mobile-submenu.open {
+    display: block; /* Mostrar el submenú */
+    height: auto; /* Dejar que el submenú se expanda según su contenido */
+  }
+  
+  /* Estilos para el item de la navbar que contiene el submenú */
+  .nav-item.position-relative {
+    margin-bottom: 0; /* No agregar margen inferior al item de la navbar */
+  }
+
+ 
+}
+
+

@@ -1,0 +1,73 @@
+.texto {
+    color: #4e4e4e; 
+    font-style: italic;
+    font-size: 25px;
+  
+    word-spacing: 5px;     /* separa palabras */
+    letter-spacing: 1px; 
+   
+}
+
+.quote-icon{
+    height: 40px;
+    width: 50px;
+}
+
+.cherry {
+    font-weight: bold;   /* Negrita */
+    font-style: italic;  /* Cursiva */
+    color: #4e4e4e;      /* Color */
+   margin-left: 55px;
+   font-size: 15px;
+    
+}
+
+.serviciotec{
+    color: rgb(163, 197, 61);
+    font-size: 30px;
+    font-weight: 800;
+    word-spacing: 5px;   
+    letter-spacing: 1px;
+    
+}
+
+.text-mu{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #727272;
+letter-spacing: 1px; 
+font-family: 'Hind', sans-serif;
+    
+}
+
+.contactanos-btn {
+    background-color: rgb(163, 197, 61);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    width: 150px;
+    height: 50px;
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+  }
+  
+  .contactanos-btn:hover {
+    background-color: rgb(143, 177, 51); 
+    color: white;/* un poco más oscuro al pasar el mouse */
+    border: none;
+  }
+  
+
+.asesoramiento {
+    font-family: "Hind", sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .text-servicios{
+    text-align: justify;
+  color: #495057;
+  font-family: 'Hind', sans-serif;
+  font-size: 18px;
+  }
+  

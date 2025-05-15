@@ -1,0 +1,192 @@
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import {
+  faCog,
+  faArrowRight,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import Menu from "./Menu";
+import Footer2 from "./Footer2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRepuestos } from "../services/UseRepuestos";
+
+const RepuestoId = () => {
+  const { id } = useParams();
+  const { repuesto, loading, error } = useRepuestos(id);
+  const [index, setIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const siguienteImagen = () => {
+    setIndex((prevIndex) => (prevIndex + 1) % repuesto.imageUrls.length);
+  };
+
+  const anteriorImagen = () => {
+    setIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + repuesto.imageUrls.length) % repuesto.imageUrls.length
+    );
+  };
+
+  const handleImageClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  if (loading || !repuesto || !repuesto.imageUrls) {
+    return (
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "100vh" }}
+      >
+        <div className="spinner-border text-success" role="status"></div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <Menu />
+      <div className="container mt-4 bg-light rounded shadow">
+        <div className="row">
+          <div className="col-md-6 d-flex align-items-start">
+            {/* Miniaturas a la izquierda */}
+            <div className="d-flex flex-column align-items-center align-self-start me-3">
+              {repuesto.imageUrls.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`Miniatura ${i}`}
+                  onClick={() => setIndex(i)}
+                  className={`img-thumbnail mb-2 ${
+                    index === i ? "border border-success" : ""
+                  }`}
+                  style={{
+                    width: "70px",
+                    height: "50px",
+                    objectFit: "cover",
+                    cursor: "pointer",
+                    transition: "border 0.3s",
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Imagen principal */}
+            <div className="position-relative">
+              <img
+                src={repuesto.imageUrls[index]}
+                alt={repuesto.title}
+                style={{
+                  width: "100%",
+                  marginBottom: "20px",
+                  cursor: "pointer",
+                }}
+                onClick={handleImageClick}
+              />
+              <button
+                onClick={anteriorImagen}
+                className="btn btn-dark position-absolute top-50 start-0 translate-middle-y ms-3"
+                style={{ opacity: 0.7 }}
+              >
+                <FontAwesomeIcon icon={faArrowLeft} />
+              </button>
+              <button
+                onClick={siguienteImagen}
+                className="btn btn-dark position-absolute top-50 end-0 translate-middle-y me-3"
+                style={{ opacity: 0.7 }}
+              >
+                <FontAwesomeIcon icon={faArrowRight} />
+              </button>
+            </div>
+          </div>
+
+          <div className="col-md-6 d-flex flex-column align-self-start">
+            <div className="p-4">
+              <h2 className="mb-3">Detalles Técnicos</h2>
+              <h4 className="fw-bold mb-3">{repuesto.title}</h4>
+
+              {/* Campos adicionales */}
+              {repuesto.extraFields && repuesto.extraFields.filter(f => f && f.trim() !== "").length > 0 && (
+  <div className="mb-4">
+    <h6 className="text-muted mb-2">Características:</h6>
+    <ul className="list-unstyled ps-2">
+      {repuesto.extraFields
+        .filter(f => f && f.trim() !== "")
+        .map((field, index) => (
+          <li
+            key={index}
+            className="mb-1 d-flex align-items-center"
+          >
+            <FontAwesomeIcon
+              icon={faCog}
+              className="iconito me-2"
+            />
+            <span>{field}</span>
+          </li>
+        ))}
+    </ul>
+  </div>
+)}
+
+              {/* Descripción */}
+              {repuesto.text && (
+                <div>
+                  <h6 className="text-muted border-bottom pb-2 mb-2">
+                    Descripción
+                  </h6>
+                  <p className="text-secondary">{repuesto.text}</p>
+                </div>
+              )}
+            </div>
+            {repuesto.pdfUrl && (
+              <div className="d-flex flex-column align-items-center justify-content-center mb-5">
+                <h3>Ficha técnica</h3>
+                <a
+                  href={repuesto.pdfUrl}
+                  className="btn btn-primary px-5 mt-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver PDF
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content">
+            <img src={repuesto.imageUrls[index]} alt="Imagen ampliada" />
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                anteriorImagen();
+              }}
+              className="modal-nav-button left"
+            >
+              <FontAwesomeIcon icon={faArrowLeft} />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                siguienteImagen();
+              }}
+              className="modal-nav-button right"
+            >
+              <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      <Footer2 />
+    </>
+  );
+};
+
+export default RepuestoId;
