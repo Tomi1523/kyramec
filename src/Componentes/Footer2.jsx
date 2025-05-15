@@ -9,7 +9,7 @@ const Footer2 = () => {
         style={{ backgroundColor: "#242424" }}
       >
         <div className="col-md-4 borde-vertical-blanco mt-4 mb-5">
-          <p class="kyramec-text">
+          <p className="kyramec-text">
            Kyramec, representante oficial de American Agro y  American Vial Group
           </p>
 

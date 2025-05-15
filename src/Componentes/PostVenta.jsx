@@ -9,7 +9,7 @@ const PostVenta = () => {
   return (
     <>
       <Menu />
-      <div class=" bg-light mt-4 ">
+      <div className=" bg-light mt-4 ">
         <div className="container py-4">
           <div className="d-flex ">
             <img src={comillas} alt="" className="quote-icon  me-3" />

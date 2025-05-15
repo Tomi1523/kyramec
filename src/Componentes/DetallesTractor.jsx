@@ -193,24 +193,24 @@ console.log(tractor)
 
 
 
-<p class="text-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{cursor:"pointer"}}>
+<p className="text-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{cursor:"pointer"}}>
   Ver todos los medios de pago
 </p>
 
 
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- <div class="modal-dialog modal-dialog-centered modal-lg-custom">
+<div className="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div className="modal-dialog modal-dialog-centered modal-lg-custom">
 
-    <div class="modal-content">
-    <div class="modal-header border-0 d-flex justify-content-end w-100">
-  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+    <div className="modal-content">
+    <div className="modal-header border-0 d-flex justify-content-end w-100">
+  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
 </div>
 
 
-      <div class="modal-body w-100" >
-        <h5 class="fw-bold mb-1" >Condiciones comerciales</h5>
+      <div className="modal-body w-100" >
+        <h5 className="fw-bold mb-1" >Condiciones comerciales</h5>
         <p className="texto-modal">Conocé todas las condiciones comerciales y medios de pago disponibles</p>
-        <h6 class="fw-bold mt-1">Medios de pago</h6>
+        <h6 className="fw-bold mt-1">Medios de pago</h6>
         <p className="texto-modal">¡Elegí la forma de pago más conveniente para cerrar tu negocio!</p>
           
 {tractor.condicionesFinanciacion?.entregaFinanciacion?.checked && (
