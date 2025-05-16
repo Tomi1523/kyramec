@@ -303,29 +303,52 @@
   cursor: pointer;
 
 }
-  /* Cambiar borde y sombra del input cuando se enfoca */
+
 input.form-control:focus {
   border-color: rgb(70, 133, 2);
   box-shadow: none
 }
 
 
+.inputwidg:focus {
+  border-color:#25D366 !important;
+  box-shadow: none; 
+ 
+}
+
+.numeros{
+  color: inherit;
+  text-decoration: none;
+}
+
+.numeros:hover{
+    color: rgb(70, 133, 2);
+}
+
+
   @media (max-width: 767px) {
     .logochico {
-      width: 250px;
+      width: 300px;
      
+     margin-top: 25px;
     }
+  .instagram-hover-area:hover .overlay {
+    display: none !important;  
+    width: auto; 
+  }
+  
+  
     .borde-vertical-blanco {
       border-right: none;
     }
 
     .kyramec-text {
-      display: block; /* sacamos el flex */
+      
       padding-left: 15px;
       padding-right: 15px;
-      text-align: center; /* o start si querés que quede a la izquierda */
+      text-align: center;
+      
     }
-
     .img-responsive-height {
       object-fit: cover;
     height: 400px;

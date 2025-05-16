@@ -35,7 +35,7 @@ const subcategoriasExcluidas = [
 
 const categoriaExcluida = "implementos-viales";
 
-// Filtrar implementos para excluir las subcategorías y la categoría especificada
+
 const implementosFiltrados = implementos.filter(
   (implemento) =>
     !subcategoriasExcluidas.includes(implemento.subcategoria) &&
@@ -60,23 +60,23 @@ const implementosFiltrados = implementos.filter(
 };
 
   return (
-    <>
-      <Menu />
-      <div className="container mt-4">
-         <input
-                  type="text"
-                  className="form-control mb-4"
-                  placeholder="Buscar implemento por título..."
-                  value={busqueda}
-                  onChange={(e) => setBusqueda(e.target.value)}
-                />
-        <div className="row">
-          {implementosFiltrados.map((implemento) => (
+  <>
+    <Menu />
+    <div className="container mt-4">
+      <input
+        type="text"
+        className="form-control mb-4"
+        placeholder="Buscar implemento por título..."
+        value={busqueda}
+        onChange={(e) => setBusqueda(e.target.value)}
+      />
+      <div className="row">
+        {implementosFiltrados.length > 0 ? (
+          implementosFiltrados.map((implemento) => (
             <div
               key={implemento.id}
               className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4"
               onClick={() => handleVerDetalle(implemento.id)}
-             
             >
               <div className="card h-100 shadow-sm pointer">
                 <img
@@ -86,18 +86,21 @@ const implementosFiltrados = implementos.filter(
                 />
                 <div className="card-body d-flex flex-column justify-content-center mt-4">
                   <h5 className="card-title text-center" style={{ color: "#383838" }}>
-                   
-                   {highlightText(implemento.title, busqueda)}
+                    {highlightText(implemento.title, busqueda)}
                   </h5>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          ))
+        ) : (
+          <p className="text-center text-muted">No se encontraron resultados.</p>
+        )}
       </div>
-      <Footer2 />
-    </>
-  );
+    </div>
+    <Footer2 />
+  </>
+);
+
 };
 
 export default Varios;

@@ -47,8 +47,8 @@ const Contactos = () => {
     }
 
     emailjs
-      .sendForm("service_xuzj5gx", "template_cunq6qq", form.current, {
-        publicKey: "KO3xH9kja2i5DHNd6",
+      .sendForm("service_n7uvqbf", "template_dhvyaqb", form.current, {
+        publicKey: "Yd4e9tJ5jog2eHOZ9",
       })
       .then(
         () => {
@@ -81,7 +81,7 @@ const Contactos = () => {
 
         <div className="col-md-6">
           <form ref={form} onSubmit={sendEmail} noValidate>
-            <div className="mb-4">
+            <div className="mb-4 mt-3 mt-md-0">
               <label>Nombre y apellido</label>
               <input
                 type="text"
@@ -132,7 +132,7 @@ const Contactos = () => {
                 <option value="30 a 70 hp"> 30 a 70 hp</option>
                 <option value="45 a 90 hp"> 45 a 90 hp</option>
                 <option value="100 a 140 hp"> 100 a 140 hp</option>
-                <option value="160 a 240 hp"> 160 a 240 hp</option>
+                <option value="160 a 260 hp"> 160 a 260 hp</option>
                 <option value="Servicio Post Venta">Servicio Post Venta</option>
                 <option value="Repuestos">Repuestos</option>
                 <option value="Otras consultas">Otras consultas</option>

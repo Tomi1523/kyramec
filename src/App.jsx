@@ -74,7 +74,7 @@ function App() {
           element={<TractorD />}
         />
         <Route
-          path="/equipos/tractores/serie-rs-160-220-hp/"
+          path="/equipos/tractores/serie-rs-160-260-hp/"
           element={<TractorE />}
         />
         
@@ -153,7 +153,7 @@ function App() {
           element={<DetallesTractor />}
         />
         <Route
-          path="/equipos/tractores/serie-rs-160-220-hp/:id"
+          path="/equipos/tractores/serie-rs-160-260-hp/:id"
           element={<DetallesTractor />}
         />
       </Routes>

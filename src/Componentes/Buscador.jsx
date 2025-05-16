@@ -59,117 +59,118 @@ const Buscador = () => {
   const noHayCoincidencias = tractoresFiltrados.length === 0 && repuestosFiltrados.length === 0 && implementosFiltrados.length === 0;
 
   return (
-    <>
-      <Menu />
-      <div className="container mt-4">
-        <input
-          type="text"
-          className="form-control mb-4"
-          placeholder="Buscar..."
-          value={busqueda}
-          onChange={(e) => setBusqueda(e.target.value)}
-        />
+  <>
+    <Menu />
+    <div className="container mt-4">
+      <input
+        type="text"
+        className="form-control mb-4"
+        placeholder="Buscar..."
+        value={busqueda}
+        onChange={(e) => setBusqueda(e.target.value)}
+      />
 
-        {busqueda && (
-          <>
-            {noHayCoincidencias ? (
-              <p className="text-center">No hay coincidencias en ninguna categoría.</p>
-            ) : (
-              <>
-                {tractoresFiltrados.length > 0 && (
-                  <>
-                    <h2>Tractores</h2>
-                    <div className="row">
-                      {tractoresFiltrados.map((tractor) => (
-                        <div key={tractor.id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                          <div
-                            className="card h-100 shadow-sm pointer"
-                            onClick={() => handleItemClick(tractor.id, 'equipos/tractores')}
-                          >
-                            {tractor.imageUrls && (
-                              <img
-                                src={tractor.imageUrls[0]}
-                                alt={tractor.title}
-                                className="card-img-top img-responsive-height"
-                              />
-                            )}
-                            <div className="card-body d-flex flex-column justify-content-center mt-4">
-                              <h5 className="card-title text-center" style={{ color: "#383838" }}>
-                                {highlightText(tractor.title, busqueda)}
-                              </h5>
-                            </div>
+      {busqueda && (
+        <>
+          {noHayCoincidencias ? (
+            <p className="text-center text-muted">No se encontraron resultados.</p>
+          ) : (
+            <>
+              {tractoresFiltrados.length > 0 && (
+                <>
+                  <h2>Tractores</h2>
+                  <div className="row">
+                    {tractoresFiltrados.map((tractor) => (
+                      <div key={tractor.id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div
+                          className="card h-100 shadow-sm pointer"
+                          onClick={() => handleItemClick(tractor.id, 'equipos/tractores')}
+                        >
+                          {tractor.imageUrls && (
+                            <img
+                              src={tractor.imageUrls[0]}
+                              alt={tractor.title}
+                              className="card-img-top img-responsive-height"
+                            />
+                          )}
+                          <div className="card-body d-flex flex-column justify-content-center mt-4">
+                            <h5 className="card-title text-center" style={{ color: "#383838" }}>
+                              {highlightText(tractor.title, busqueda)}
+                            </h5>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  </>
-                )}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
 
-                {repuestosFiltrados.length > 0 && (
-                  <>
-                    <h2>Repuestos</h2>
-                    <div className="row">
-                      {repuestosFiltrados.map((repuesto) => (
-                        <div key={repuesto.id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                          <div
-                            className="card h-100 shadow-sm pointer"
-                            onClick={() => handleItemClick(repuesto.id, 'repuestos')}
-                          >
-                            {repuesto.imageUrls && (
-                              <img
-                                src={repuesto.imageUrls[0]}
-                                alt={repuesto.title}
-                                className="card-img-top img-responsive-height"
-                              />
-                            )}
-                            <div className="card-body d-flex flex-column justify-content-center mt-4">
-                              <h5 className="card-title text-center" style={{ color: "#383838" }}>
-                                {highlightText(repuesto.title, busqueda)}
-                              </h5>
-                            </div>
+              {repuestosFiltrados.length > 0 && (
+                <>
+                  <h2>Repuestos</h2>
+                  <div className="row">
+                    {repuestosFiltrados.map((repuesto) => (
+                      <div key={repuesto.id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div
+                          className="card h-100 shadow-sm pointer"
+                          onClick={() => handleItemClick(repuesto.id, 'repuestos')}
+                        >
+                          {repuesto.imageUrls && (
+                            <img
+                              src={repuesto.imageUrls[0]}
+                              alt={repuesto.title}
+                              className="card-img-top img-responsive-height"
+                            />
+                          )}
+                          <div className="card-body d-flex flex-column justify-content-center mt-4">
+                            <h5 className="card-title text-center" style={{ color: "#383838" }}>
+                              {highlightText(repuesto.title, busqueda)}
+                            </h5>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  </>
-                )}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
 
-                {implementosFiltrados.length > 0 && (
-                  <>
-                    <h2>Implementos</h2>
-                    <div className="row">
-                      {implementosFiltrados.map((implemento) => (
-                        <div key={implemento.id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                          <div
-                            className="card h-100 shadow-sm pointer"
-                            onClick={() => handleItemClick(implemento.id, 'implementos')}
-                          >
-                            {implemento.imageUrls && (
-                              <img
-                                src={implemento.imageUrls[0]}
-                                alt={implemento.title}
-                                className="card-img-top img-responsive-height"
-                              />
-                            )}
-                            <div className="card-body d-flex flex-column justify-content-center mt-4">
-                              <h5 className="card-title text-center" style={{ color: "#383838" }}>
-                                {highlightText(implemento.title, busqueda)}
-                              </h5>
-                            </div>
+              {implementosFiltrados.length > 0 && (
+                <>
+                  <h2>Implementos</h2>
+                  <div className="row">
+                    {implementosFiltrados.map((implemento) => (
+                      <div key={implemento.id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div
+                          className="card h-100 shadow-sm pointer"
+                          onClick={() => handleItemClick(implemento.id, 'implementos')}
+                        >
+                          {implemento.imageUrls && (
+                            <img
+                              src={implemento.imageUrls[0]}
+                              alt={implemento.title}
+                              className="card-img-top img-responsive-height"
+                            />
+                          )}
+                          <div className="card-body d-flex flex-column justify-content-center mt-4">
+                            <h5 className="card-title text-center" style={{ color: "#383838" }}>
+                              {highlightText(implemento.title, busqueda)}
+                            </h5>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </>
-            )}
-          </>
-        )}
-      </div>
-      <Footer2 />
-    </>
-  );
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          )}
+        </>
+      )}
+    </div>
+    <Footer2 />
+  </>
+);
+
 };
 
 export default Buscador;

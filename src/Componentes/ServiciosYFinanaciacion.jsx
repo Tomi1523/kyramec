@@ -8,11 +8,13 @@ import WEB6 from "../assets/WEB6.png";
 import WEB7 from "../assets/WEB7.png";
 import WEB8 from "../assets/WEB8.png";
 import WEB9 from "../assets/WEB9.png";
+import WEB10 from "../assets/WEB10.png";
+import WEB11 from "../assets/WEB11.png";
 import "../estilos/ServYfina.css";
 import Menu from "./Menu";
 import Footer2 from "./Footer2";
 
-const images = [WEB1, WEB2, WEB3, WEB4, WEB5, WEB6, WEB7, WEB8, WEB9];
+const images = [WEB11,WEB10,WEB1, WEB2, WEB3, WEB4, WEB5, WEB6, WEB7, WEB8, WEB9];
 
 const ServiciosYFinanaciacion = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

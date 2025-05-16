@@ -76,16 +76,17 @@ const Menu = () => {
           <div className="d-flex col-6 mt-4 h-25 d-none d-sm-flex">
             <div className="col tel">
               <FontAwesomeIcon icon={faPhone} />
-              <span>+54 9 3434 69-4909</span>
+              <span>+54 9 3437 55-4243</span>
+             
             </div>
             <a
-              href="https://wa.me/5493434694909?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20Kyramec..."
+             href="https://wa.me/5493437554243?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20Kyramec..."
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none col wsp"
             >
               <FontAwesomeIcon icon={faWhatsapp} />
-              <span>+54 9 3434 69-4909</span>
+              <span>+54 9 3437 55-4243</span>
             </a>
 
             <div className="col horarios">
@@ -104,14 +105,16 @@ const Menu = () => {
       >
         <div className="container-fluid">
           <button
-            className="navbar-toggler"
+            className={`navbar-toggler ${menuOpen ? "open" : ""}`}
             type="button"
             onClick={toggleMenu}
             aria-controls="mobileMenu"
             aria-expanded={menuOpen}
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="toggler-line top-line"></span>
+            <span className="toggler-line middle-line"></span>
+            <span className="toggler-line bottom-line"></span>
           </button>
 
           <div
@@ -139,10 +142,17 @@ const Menu = () => {
               </li>
               <li className="nav-item position-relative">
                 <span
-                  className="nav-link text-white dropdown-toggle"
+                  className={` no-default-arrow nav-link text-white dropdown-toggle ${
+                    equiposSubmenuOpen ? "open" : ""
+                  }`}
                   onClick={toggleEquiposSubmenu}
+                  style={{ cursor: "pointer", userSelect: "none" }}
                 >
-                  EQUIPOS
+                  EQUIPOS{" "}
+                  <i
+                    className="fas fa-angle-right"
+                    style={{ marginLeft: "2px" }}
+                  ></i>
                 </span>
 
                 <div
@@ -243,10 +253,17 @@ const Menu = () => {
 
               <li className="nav-item position-relative">
                 <span
-                  className="nav-link text-white dropdown-toggle"
+                  className={` no-default-arrow nav-link text-white dropdown-toggle ${
+                    implementosSubmenuOpen ? "open" : ""
+                  }`}
                   onClick={toggleImplementosSubmenu}
+                  style={{ cursor: "pointer", userSelect: "none" }}
                 >
-                  IMPLEMENTOS
+                  IMPLEMENTOS{" "}
+                  <i
+                    className="fas fa-angle-right"
+                    style={{ marginLeft: "2px" }}
+                  ></i>
                 </span>
 
                 <div
@@ -360,10 +377,17 @@ const Menu = () => {
 
               <li className="nav-item position-relative">
                 <span
-                  className="nav-link text-white dropdown-toggle"
+                  className={` no-default-arrow nav-link text-white dropdown-toggle ${
+                    repuestosSubmenuOpen ? "open" : ""
+                  }`}
                   onClick={toggleRepuestosSubmenu}
+                  style={{ cursor: "pointer", userSelect: "none" }}
                 >
-                  REPUESTOS
+                  REPUESTOS{" "}
+                  <i
+                    className="fas fa-angle-right"
+                    style={{ marginLeft: "2px" }}
+                  ></i>
                 </span>
 
                 <div
@@ -371,7 +395,7 @@ const Menu = () => {
                     repuestosSubmenuOpen ? "open" : ""
                   }`}
                 >
-                     <Link
+                  <Link
                     to="/repuestos"
                     className="nav-link text-white"
                     onClick={() => {
@@ -407,15 +431,21 @@ const Menu = () => {
               </li>
 
               <li className="nav-item">
-                <Link to="/contactos" className="text-white nav-link">
+                <Link
+                  to="/contactos"
+                  className="text-white nav-link"
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                >
                   CONTACTOS
                 </Link>
               </li>
               <li className="nav-item">
-              <Link to="/buscador" className="text-white nav-link">
-                <i className="fas fa-search"></i>
-              </Link>
-            </li>
+                <Link to="/buscador" className="text-white nav-link">
+                  <i className="fas fa-search"></i>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -502,11 +532,11 @@ const Menu = () => {
                     </li>
                     <li className="dropdown-submenu">
                       <Link
-                        to="/equipos/tractores/serie-rs-160-220-hp/"
+                        to="/equipos/tractores/serie-rs-160-260-hp/"
                         className="dropdown-item dropdown-toggle text-white d-flex justify-content-between align-items-center no-default-arrow"
                         role="button"
                       >
-                        160 a 220 hp
+                        160 a 260 hp
                       </Link>
                     </li>
                   </ul>

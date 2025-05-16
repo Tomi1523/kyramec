@@ -40,7 +40,7 @@ const Footer2 = () => {
 
         <div className="col-md-4 borde-vertical-blanco mt-4 mb-5 text-center text-md-start">
   <h3 className="ubicacion ">UBICACIÓN</h3>
-  <ul className="mt-4 parrafos-juntos">
+  <ul className="mt-3 parrafos-juntos">
     <li>RN12 Km 601, La Paz, Entre Ríos - ARGENTINA</li>
 
     {[
@@ -55,7 +55,8 @@ const Footer2 = () => {
           href={`https://wa.me/${number}?text=${encodeURIComponent('Hola, vengo desde la página de Kyramec')}`}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ color: 'inherit', textDecoration: 'none' }}
+          
+          className="numeros"
         >
           +{number.slice(0, 2)} {number.slice(2, 6)} {number.slice(6, 9)}-{number.slice(9)}
         </a>

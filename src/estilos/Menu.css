@@ -11,22 +11,84 @@
     padding-left: 0 !important;
   padding-right: 0 !important;
 }
-.navbar {
-  height: 70px; /* o lo que mida tu navbar cerrado */
-
-}
 .navbar-toggler {
-    
-     margin-left: 16px;
-    
-   
+  border: none;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  margin-left: 15px;
+  background: none;
+  z-index: 1050;
+   border: none;
+  outline: none;
+  box-shadow: none;
 }
+
+.nav-link .fas {
+ 
+  transition: transform 0.3s ease;
+ 
+  
+  
+}
+
+.nav-link.open .fas {
+  transform: rotate(90deg);
+}
+
+
+.navbar-toggler:focus {
+  outline: none;
+   border: none;
+  outline: none;
+  box-shadow: none;
+}
+.toggler-line {
+  display: block;
+  height: 4px;
+  width: 30px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  right: 10px; 
+    border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+
+.top-line {
+  top: 8px;
+}
+.middle-line {
+  top: 18px;
+}
+.bottom-line {
+  top: 28px;
+}
+
+
+.navbar-toggler.open .top-line {
+  transform: rotate(45deg);
+  top: 18px; 
+}
+
+.navbar-toggler.open .middle-line {
+  opacity: 0;
+}
+
+.navbar-toggler.open .bottom-line {
+  transform: rotate(-45deg);
+  top: 18px; 
+}
+
+
 
 /* Fijamos el navbar bien arriba */
 .navbar.fixed-navbar {
     
  
-    left: 0;
+    
     height: 70px;
     width: 100%;
     z-index: 1100;

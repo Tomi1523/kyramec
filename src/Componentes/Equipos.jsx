@@ -27,7 +27,7 @@ const Equipos = () => {
           navigate(`/equipos/tractores/serie-rc-100-140-hp/${tractor.id}`);
           break;
         case "E":
-          navigate(`/equipos/tractores/serie-rs-160-220-hp/${tractor.id}`);
+          navigate(`/equipos/tractores/serie-rs-160-260-hp/${tractor.id}`);
           break;
         default:
           navigate(`/equipos/tractores/${tractor.id}`);

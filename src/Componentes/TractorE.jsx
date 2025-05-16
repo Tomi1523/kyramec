@@ -22,7 +22,7 @@ const navigate = useNavigate();
 
  const handleImageClick = (id) => {
     
-    navigate(`/equipos/tractores/serie-rs-160-220-hp/${id}`);
+    navigate(`/equipos/tractores/serie-rs-160-260-hp/${id}`);
   };
 
   return (

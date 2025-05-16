@@ -53,7 +53,7 @@ const Tractores = () => {
       case "D":
         return `/equipos/tractores/serie-rc-100-140-hp/${id}`;
       case "E":
-        return `/equipos/tractores/serie-rs-160-220-hp/${id}`;
+        return `/equipos/tractores/serie-rs-160-260-hp/${id}`;
       default:
         return `/equipos/tractores/${id}`;
     }

@@ -72,7 +72,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           className="text-decoration-none text-dark w-100"
         >
-          <div className="col-md-12 d-flex mt-5 instagram-hover-area">
+          <div className=" container col-md-12 d-flex mt-5 instagram-hover-area">
             <div className="logo-container position-relative">
               <img
                 src={logochico}
@@ -88,7 +88,7 @@ const Footer = () => {
               <h3>Kyramec SAS</h3>
               <p className="sub-text mt-2">
                 Tenemos la línea más completa de Tractores Agrícolas de Chery By
-                LION. Tenemos más de 700 tractores comercializados.
+                LION. Tenemos más de 2000 tractores comercializados.
               </p>
             </div>
           </div>
